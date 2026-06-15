@@ -21,16 +21,15 @@ To become a strong AI/ML engineer and gain admission to a top U.S. university wi
 ## 📂 Projects
 (Links will be added as I build them)
 
-- AI Study Assistant (in progress)
-- Kaggle beginner projects (in progress)
+- todo list in Python (in progress)
 
 ---
 
 ## 📌 Current Focus
 - SAT preparation
-- AI/ML projects
 - Python mastery
-- CS50 AI course
+- AI/ML projects
+
 
 ---
 
