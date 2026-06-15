@@ -35,4 +35,5 @@ To become a strong AI/ML engineer and gain admission to a top U.S. university wi
 ---
 
 ## 📫 Contact
-(Add later: LinkedIn / Email)
+https://www.linkedin.com/in/khizar-atif-939229388/
+khizaratif.ai@gmail.com
