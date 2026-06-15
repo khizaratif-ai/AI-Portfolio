@@ -10,5 +10,4 @@
 
 ## Tools
 - GitHub
-- Jupyter Notebook
-- VS Code
+- Pycharm
