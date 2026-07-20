@@ -11,9 +11,8 @@ To become a strong AI/ML engineer and gain admission to a top U.S. university wi
 ---
 
 ## 🧠 Skills
-- Python (learning/advanced level in progress)
+- Python (learning/advanced level)
 - Machine Learning (beginner → intermediate)
-- Data Analysis (NumPy, Pandas)
 - Problem Solving
 
 ---
@@ -21,7 +20,7 @@ To become a strong AI/ML engineer and gain admission to a top U.S. university wi
 ## 📂 Projects
 (Links will be added as I build them)
 
-- todo list in Python (in progress)
+
 
 ---
 
