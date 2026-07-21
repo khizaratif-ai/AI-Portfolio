@@ -18,7 +18,8 @@ To become a strong AI/ML engineer and gain admission to a top U.S. university wi
 ---
 
 ## 📂 Projects
-(Links will be added as I build them)
+# Project_1 (password manager)
+- https://github.com/khizaratif-ai/AI-Portfolio/tree/89e50db7910d094e5e24ca4c9dfd6a1be7043131/Project_1
 
 
 
