@@ -18,7 +18,7 @@ To become a strong AI/ML engineer and gain admission to a top U.S. university wi
 ---
 
 ## 📂 Projects
-### Project_1 (password manager)
+### Project 1 (Password Manager With Python)
 - https://github.com/khizaratif-ai/AI-Portfolio/tree/89e50db7910d094e5e24ca4c9dfd6a1be7043131/Project_1
 
 
