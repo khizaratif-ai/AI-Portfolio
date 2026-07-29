@@ -1,40 +1,16 @@
-# -------------
-# FOLDER NAME
-# -------------
+import os
 
-DATA_FOLDER = "data"
+# Main project folder
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# ----------
-# FILE NAME
-# ----------
+# Data folder
+DATA_FOLDER = os.path.join(BASE_DIR, "data")
 
-PASSWORD_FILE = "data/passwords.json"
+# Files
+MASTER_PASSWORD_FILE = os.path.join(DATA_FOLDER, "master.hash")
+PASSWORD_FILE = os.path.join(DATA_FOLDER, "passwords.json")
 
-MASTER_PASSWORD_FILE = "data/master.hash"
 
-# -----------
-# Secret Key
-# -----------
-# This key will be used for our
-# simple XOR encryption.
-# -----------------------------
-
-SECRET_KEY = "PythonPasswordManager2026"
-
-# ----------
-# Menu Title
-# ----------
-
-PROGRAM_NAME = "PYTHON PASSWORD MANAGER"
-
-# ------------
-# Menu Options
-# ------------
-
-MENU_OPTIONS = [
-    "1. Add New Password",
-    "2. View All Passwords",
-    "3. Search Password",
-    "4. Delete Password",
-    "5. Exit"
-]
+# Create data folder if it does not exist
+if not os.path.exists(DATA_FOLDER):
+    os.makedirs(DATA_FOLDER)

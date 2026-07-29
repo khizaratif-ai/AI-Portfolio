@@ -1,114 +1,129 @@
-# ============================================
-# This file is responsible for:
-# 1) Creating the master password
-# 2) Hashing the password
-# 3) Verifying the password
-# ============================================
-
 import hashlib
 import os
-import getpass
 
 from constants import MASTER_PASSWORD_FILE
 
-# ================================================
-# the function below converts a password into hash
-# ================================================
 
 def hash_password(password):
-    password_bytes = password.encode()
-    hashed_password = hashlib.sha256(password_bytes)
-    fina_hash = hashed_password.hexdigest()
-    return fina_hash
 
-# ===========================================================================
-# this function create the master password only if it does not already exist.
-# ===========================================================================
+    return hashlib.sha256(password.encode()).hexdigest()
+
+
 
 def create_master_password():
-    if os.path.exists(MASTER_PASSWORD_FILE):
-        return
 
-    print("======================================")
-    print("FIRST TIME SETUP")
-    print("======================================")
-    print()
-    while True:
-        master_password = getpass.getpass("Create Master Password: ")
+    print("\nCreate your master password")
 
-        confirm_password = getpass.getpass("Confirm Password: ")
+    password = input("Enter master password: ")
 
-        print()
+    confirm_password = input("Confirm master password: ")
 
-        if master_password != confirm_password:
 
-            print("Passwords do not match.")
-            print("Please try again.")
-            print()
+    if password != confirm_password:
 
-        elif master_password == "":
+        print("Passwords do not match!")
 
-            print("Password cannot be empty.")
-            print()
+        return False
 
-        else:
 
-            hashed_password = hash_password(master_password)
+    hashed_password = hash_password(password)
 
-            file = open(MASTER_PASSWORD_FILE, "w")
 
-            file.write(hashed_password)
+    with open(MASTER_PASSWORD_FILE, "w") as file:
 
-            file.close()
+        file.write(hashed_password)
 
-            print("Master Password Created Successfully.")
-            print()
 
-            break
-# ===============================================
-# the function below verifies the master password
-# ===============================================
+    print("\nMaster password created successfully!")
 
-def verify_master_password():
+    return True
 
-    print("======================================")
-    print("LOGIN")
-    print("======================================")
-    print()
 
-    file = open(MASTER_PASSWORD_FILE, "r")
 
-    saved_hash = file.read()
 
-    file.close()
 
-    attempts = 3
+def check_master_password():
 
-    while attempts > 0:
+    if not os.path.exists(MASTER_PASSWORD_FILE):
 
-        entered_password = getpass.getpass("Enter Master Password: ")
+        return False
 
-        entered_hash = hash_password(entered_password)
 
-        if entered_hash == saved_hash:
+    password = input("\nEnter master password: ")
 
-            print()
-            print("Login Successful.")
-            return True
 
-        else:
+    with open(MASTER_PASSWORD_FILE, "r") as file:
 
-            attempts = attempts - 1
+        saved_password = file.read()
 
-            print()
-            print("Incorrect Password.")
 
-            if attempts > 0:
 
-                print("Attempts Remaining:", attempts)
-                print()
+    if hash_password(password) == saved_password:
 
-    print()
-    print("Too many failed attempts.")
+        print("Login successful!")
 
-    return False
+        return True
+
+
+    else:
+
+        print("Wrong password!")
+
+        return False
+
+
+
+
+
+def change_master_password():
+
+    print("\n===== Change Master Password =====")
+
+
+    current_password = input("Enter current master password: ")
+
+
+
+    with open(MASTER_PASSWORD_FILE, "r") as file:
+
+        saved_password = file.read()
+
+
+
+    if hash_password(current_password) != saved_password:
+
+        print("Wrong current password!")
+
+        return False
+
+
+
+
+    new_password = input("Enter new master password: ")
+
+    confirm_password = input("Confirm new master password: ")
+
+
+
+    if new_password != confirm_password:
+
+        print("Passwords do not match!")
+
+        return False
+
+
+
+
+    new_hash = hash_password(new_password)
+
+
+
+    with open(MASTER_PASSWORD_FILE, "w") as file:
+
+        file.write(new_hash)
+
+
+
+    print("\nMaster password changed successfully!")
+
+    return True
