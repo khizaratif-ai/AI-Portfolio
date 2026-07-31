@@ -6,5 +6,21 @@
         "date": "29/7/2026",
         "type": "Income",
         "notes": "income recieved from freelancing "
+    },
+    {
+        "title": "Freelancing",
+        "amount": 450000.0,
+        "category": "income",
+        "date": "7/31/2026",
+        "type": "Income",
+        "notes": ""
+    },
+    {
+        "title": "school fee",
+        "amount": 78000.0,
+        "category": "expense",
+        "date": "31/7/2026",
+        "type": "Expense",
+        "notes": ""
     }
 ]
